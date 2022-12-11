@@ -1,0 +1,39 @@
+<h1 align="center">Employee Records</h1>
+<hr>
+
+<div class="container">
+
+    <div class="input-type input-type-btn">
+        <select name="department" id="department" (change)="onChange('department',$event)">
+            <option value="value">Department</option>
+            <option [value]="data" *ngFor="let data of department">{{data}}</option>
+        </select>
+    </div>&nbsp;
+    <div class="input-type input-type-btn">
+        <select name="manager" id="manager" (change)="onChange('manager',$event)">
+            <option value="value">Manager</option>
+            <option [value]="data" *ngFor="let data of manager">{{data}}</option>
+        </select>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Manager</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of Employee">
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.department}}</td>
+                <td>{{data.manager}}</td>
+                <td>{{data.salary | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
